@@ -29,21 +29,21 @@ namespace Collector_local_db
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            using (var db = new BloggingContext())
+            using (var db = new CollectorContext())
             {
-                Blogs.ItemsSource = db.Blogs.ToList();
+                //Blogs.ItemsSource = db.Blogs.ToList();
             }
         }
 
         private void Add_Click(object sender, RoutedEventArgs e)
         {
-            using (var db = new BloggingContext())
+            using (var db = new CollectorContext())
             {
-                var blog = new Blog { Url = NewBlogUrl.Text };
-                db.Blogs.Add(blog);
-                db.SaveChanges();
+                //var blog = new Blog { Url = NewBlogUrl.Text };
+                //db.Blogs.Add(blog);
+                //db.SaveChanges();
 
-                Blogs.ItemsSource = db.Blogs.ToList();
+                //Blogs.ItemsSource = db.Blogs.ToList();
             }
         }
 
