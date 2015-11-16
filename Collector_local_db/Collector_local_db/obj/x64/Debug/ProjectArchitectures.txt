@@ -1,0 +1,1 @@
+C:\Users\wpiot\Source\Repos\Visual_Collector\Collector_local_db\Collector_local_db\Collector_local_db.csproj;x64

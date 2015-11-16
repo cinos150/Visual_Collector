@@ -6,14 +6,17 @@ using Windows.Storage;
 
 namespace Collector_local_db
 {
-    public class BloggingContext : DbContext
+    public class CollectorContext : DbContext
     {
-        public DbSet<Blog> Blogs { get; set; }
-        public DbSet<Post> Posts { get; set; }
+        public DbSet<Entry> Entries { get; set; }
+        public DbSet<Object> Objects { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Type> Types { get; set; }
+        public DbSet<Currency> Currencies { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string databaseFilePath = "Blogging2.db";
+            string databaseFilePath = "CollectorDB.db";
             try
             {
                 databaseFilePath = Path.Combine(ApplicationData.Current.LocalFolder.Path, databaseFilePath);
@@ -27,27 +30,59 @@ namespace Collector_local_db
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // Make Blog.Url required
-            modelBuilder.Entity<Blog>()
-                .Property(b => b.Url)
-                .IsRequired();
+            //modelBuilder.Entity<Blog>()
+             //   .Property(b => b.Url)
+              //  .IsRequired();
+
+
         }
     }
 
-    public class Blog
+    public class Entry
     {
-        public int BlogId { get; set; }
-        public string Url { get; set; }
+        public int EntryId { get; set; }
 
-        public List<Post> Posts { get; set; }
+        public Type Type { get; set; }
+
+        public string Title { get; set; }
+        public DateTime Date { get; set; }
+        public string Desc { get; set; }
+        public Object Object { get; set; }
+        public string Who { get; set; }
+        public float Amount { get; set; }
+        public int Priority { get; set; }
+        public DateTime Deadline { get; set; }
+
+        public Currency Currency { get; set; }
     }
 
-    public class Post
+    public class Object
     {
-        public int PostId { get; set; }
-        public string Title { get; set; }
-        public string Content { get; set; }
+        public int ObjectId { get; set; }
+        public string Name { get; set; }
+        public byte[] Image { get; set; }
 
-        public int BlogId { get; set; }
-        public Blog Blog { get; set; }
+        public int Quantity { get; set; }
+        public Category Category { get; set; }
+    }
+
+    public class Category
+    {
+        public int CategoryId { get; set; }
+        public string Cname { get; set; }
+    }
+
+    public class Type
+    {
+        public int TypeId { get; set; }
+        public string Typename { get; set; }
+    }
+
+    public class Currency
+    {
+        public int CurrencyId { get; set; }
+        public string Cursi { get; set; }
+        public string Cursn { get; set; }
+        public string Curln { get; set; }
     }
 }
