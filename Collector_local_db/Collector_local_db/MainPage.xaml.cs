@@ -38,6 +38,7 @@ namespace Collector_local_db
 
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
+<<<<<<< HEAD
             //    using (var db = new CollectorContext())
             //    {
             //        //var blog = new Blog { Url = NewBlogUrl.Text };
@@ -106,6 +107,15 @@ namespace Collector_local_db
                     this.Content = mynewPage;
 
                 }
+=======
+            using (var db = new CollectorContext())
+            {
+                //var blog = new Blog { Url = NewBlogUrl.Text };
+                //db.Blogs.Add(blog);
+                //db.SaveChanges();
+
+                //Blogs.ItemsSource = db.Blogs.ToList();
+>>>>>>> 6db7726b9b16b5adb208cda779c0b14b85c08e5b
             }
 
             if ((int)res.Id == 2)

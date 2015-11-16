@@ -60,7 +60,11 @@ namespace Collector_local_db
     {
         public int ObjectId { get; set; }
         public string Name { get; set; }
+<<<<<<< HEAD
         public byte[] Image { get; set; }
+=======
+        public string Image { get; set; }
+>>>>>>> 6db7726b9b16b5adb208cda779c0b14b85c08e5b
 
         public int Quantity { get; set; }
         public Category Category { get; set; }

@@ -29,9 +29,12 @@ namespace Collector_local_db
         /// </summary>
         public App()
         {
+<<<<<<< HEAD
             //Microsoft.ApplicationInsights.WindowsAppInitializer.InitializeAsync(
             //    Microsoft.ApplicationInsights.WindowsCollectors.Metadata |
             //    Microsoft.ApplicationInsights.WindowsCollectors.Session);
+=======
+>>>>>>> 6db7726b9b16b5adb208cda779c0b14b85c08e5b
             this.InitializeComponent();
             this.Suspending += OnSuspending;
             using (var db = new CollectorContext())
