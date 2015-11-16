@@ -1,1 +1,1 @@
-E:\Visual studio apps\Collector_local_db\Collector_local_db\Collector_local_db.csproj;x86
+C:\Users\Msk\Documents\GitHubVisualStudio\Visual_Collector\Collector_local_db\Collector_local_db\Collector_local_db.csproj;x86
